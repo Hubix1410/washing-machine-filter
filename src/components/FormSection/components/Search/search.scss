@@ -1,0 +1,13 @@
+@import "/src/utilities/";
+
+.search{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60px;
+
+    &__input {
+        font-family: 'SamsungOne';
+    }
+}

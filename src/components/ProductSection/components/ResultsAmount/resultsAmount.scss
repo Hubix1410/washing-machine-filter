@@ -1,0 +1,13 @@
+@import "src/utilities/";
+
+.results{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width:100%;
+
+    &__data{
+        font-size: 14px;
+        color: $font-black;
+    }
+}

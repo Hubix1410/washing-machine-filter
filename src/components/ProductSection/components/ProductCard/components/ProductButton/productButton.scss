@@ -1,0 +1,39 @@
+@import "src/utilities/";
+
+.productButton{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60px;
+
+    &--base{
+        border-radius: 24px;
+        color: $font-white;
+        outline: none;
+        border: none;
+        width:150px;
+        height:36px;
+        font-size: 14px;
+        letter-spacing: 4px;
+        font-family: SamsungOne700;
+    }
+
+    &--active{
+        background-color: $button-active;
+
+        &:hover{
+            background-color: $button-active-hover;
+            cursor: pointer;
+        }
+    }
+
+    &--inactive{
+        background-color: $button-base;
+
+        &:hover{
+            background-color: $button-base-hover;
+            cursor: pointer;
+        }
+    }
+}

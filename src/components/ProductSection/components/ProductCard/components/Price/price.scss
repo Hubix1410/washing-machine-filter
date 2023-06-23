@@ -1,0 +1,30 @@
+@import "src/utilities/";
+
+.price{
+    width:100%;
+    
+    > p{
+        margin: 10px 0;
+    }
+
+    &__date{
+        font-size: 12px;
+        color: $font-grey-1;
+    }
+
+    &__mainPrice{
+        font-size: 40px;
+        font-family: SamsungOne700;
+    }
+
+    &__subPrice{
+        margin-left: 5px;
+        font-size:16px;
+        display: inline-block;
+    }
+
+    &__installments{
+        font-size: 16px;
+        color: $font-grey-2;
+    }
+}

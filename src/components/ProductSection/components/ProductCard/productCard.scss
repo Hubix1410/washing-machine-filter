@@ -1,0 +1,24 @@
+@import "src/utilities/";
+
+.card{
+    width: 340px;
+    height: 570px;
+    border-radius: 20px;
+    padding:30px;
+    margin: 20px 0 0 0;
+    background-color: $backgorund-white;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+    &__image{
+        width:240px;
+        margin-top: -10px;
+    }
+
+    &__title{
+        font-size: 18px;
+    }
+}

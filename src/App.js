@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import "./app.scss";
+import { FormSection, Header, ProductSection } from './components';
 
 function App() {
+
+  const [searchConfig, setSearchConfig] = useState({
+    functions: "all",
+    energyClass: "all",
+    sortByForm: "all",
+    capacity: 0,
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container_app">
+      <Header/>
+      <FormSection setSearchConfig={setSearchConfig} searchConfig={searchConfig}/>
+      <ProductSection searchConfig={searchConfig}/>
     </div>
   );
 }

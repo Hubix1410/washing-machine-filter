@@ -1,0 +1,14 @@
+@import "/src/utilities/";
+
+.header{
+    background-color: $backgorund-white;
+    height:70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        text-align: center;
+    }
+}
