@@ -176,8 +176,8 @@ function ProductSection({searchConfig}) {
             })
         }
 
-        if(searchConfig.sortByForm !== "all"){
-            filteredData = collect(filteredData).sortBy(searchConfig.sortByForm);
+        if(searchConfig.formSortBy !== "all"){
+            filteredData = collect(filteredData).sortBy(searchConfig.formSortBy);
             filteredData = filteredData.items
         }
 

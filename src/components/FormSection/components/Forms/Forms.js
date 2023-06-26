@@ -45,7 +45,7 @@ function Forms({searchConfig, setSearchConfig}) {
     _searchConfig[searchType] = value;
     setSearchConfig(_searchConfig);
   }
-  console.log(searchConfig);
+
   return (
     <section className="forms">
       <div className="forms__container">
