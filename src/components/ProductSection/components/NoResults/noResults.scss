@@ -1,0 +1,12 @@
+@import "src/utilities";
+
+.noResults{
+    height:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__data{
+        font-size: 18px;
+    }
+}

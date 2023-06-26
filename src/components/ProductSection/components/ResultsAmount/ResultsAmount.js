@@ -3,8 +3,8 @@ import "./resultsAmount.scss";
 
 function ResultsAmount({amount}) {
     return (
-        <div className="results">
-            <p className="results__data">
+        <div className="resultsAmount">
+            <p className="resultsAmount__data">
                 Liczba wyników: {amount}
             </p>
         </div>

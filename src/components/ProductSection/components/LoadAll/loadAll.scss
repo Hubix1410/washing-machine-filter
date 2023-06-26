@@ -15,14 +15,29 @@
         outline: none;
         font-size: 18px;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
         color: $font-blue;
         font-family: SamsungOne700;
     }
 
-    &__loadAll_arrow{
-        background-color: $font-blue;
+    &__arrow{
         width:10px;
         height:10px;
-        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        margin-left: 8px;
+        border-width: 3px 0 0 3px;
+        border-color: $font-blue;
+        border-style: solid;
+
+        &--showMore{
+            transform: rotate(-135deg);
+        }
+
+        &--showLess{
+            transform: rotate(45deg)
+        }
     }
 }

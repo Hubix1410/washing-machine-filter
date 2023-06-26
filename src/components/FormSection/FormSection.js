@@ -5,7 +5,7 @@ import { Forms, Search } from './components';
 function FormSection({searchConfig, setSearchConfig}){
     return(
         <section>
-            <Search/>
+            <Search setSearchConfig={setSearchConfig} searchConfig={searchConfig}/>
             <Forms setSearchConfig={setSearchConfig} searchConfig={searchConfig}/>
         </section>
     )

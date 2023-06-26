@@ -7,8 +7,9 @@ function App() {
   const [searchConfig, setSearchConfig] = useState({
     functions: "all",
     energyClass: "all",
-    sortByForm: "all",
+    formSortBy: "all",
     capacity: 0,
+    searchByName: "",
   })
 
   return (

@@ -5,9 +5,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height:60px;
+    height:80px;
 
     &__input {
-        font-family: 'SamsungOne';
+        font-family: 'SamsungOne700';
+        padding: 0 10px;
+        outline: none;
+        border: none;
+        background-color: $backgorund-white;
+        font-size: 14px;
+        width:250px;
+        height: 36px;
     }
 }

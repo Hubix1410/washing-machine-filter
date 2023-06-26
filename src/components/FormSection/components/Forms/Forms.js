@@ -1,73 +1,98 @@
-import React from 'react';
 import "./forms.scss";
+import React from 'react';
+import Select from 'react-select';
 
+function Forms({searchConfig, setSearchConfig}) {
 
-function Forms({searchConfig, setSearchConfig}){
+  const sortOptions = [
+    { value: 'all', label: 'Wszystkie' },
+    { value: 'price', label: 'Cena' },
+    { value: 'capacity', label: 'Pojemność' },
+    { value: 'popularity', label: 'Popularność' }
+  ];
 
-    function changeSearchConfig(event, searchType){
-        let _searchConfig = {...searchConfig};
-        _searchConfig[searchType] = event.target.value
-        setSearchConfig(_searchConfig);
-    }
+  const functionsOptions = [
+    { value: 'all', label: 'Wszystkie' },
+    { value: 'Drzwi AddWash', label: 'Drzwi AddWash' },
+    { value: 'Panel AI Control', label: 'Panel AI Control' },
+    { value: 'Silnik inwerterowy', label: 'Silnik inwerterowy' },
+    { value: 'Wyświetlacz Elektroniczny', label: 'Wyświetlacz Elektroniczny' }
+  ];
 
-    return(
-        <section className="forms">
-            <div className="forms__container">
-                <p className="forms__label">
-                    Sortuj po:
-                </p>
-                <select name="sortBy"  className="forms__select" value={searchConfig.sortByForm} onChange={(value)=>changeSearchConfig(value, "sortByForm")}>
-                    <option className="forms__option" value="all">Wszystkie</option>
-                    <option className="forms__option" value="price">Cena</option>
-                    <option className="forms__option" value="capacity">Pojemność</option>
-                    <option className="forms__option" value="popularity">Popularność</option>
-                </select>
-            </div>
+  const energyClassOptions = [
+    { value: 'all', label: 'Wszystkie' },
+    { value: 'A', label: 'A' },
+    { value: 'B', label: 'B' },
+    { value: 'C', label: 'C' },
+    { value: 'D', label: 'D' },
+    { value: 'E', label: 'E' },
+    { value: 'F', label: 'F' }
+  ];
 
-            <div className="forms__container">
-                <p className="forms__label">
-                    Funkcje:
-                </p>
-                <select name="functions" className="forms__select" value={searchConfig.functions} onChange={(value)=>changeSearchConfig(value, "functions")}>
-                    <option className="forms__option" value="all">Wszystkie</option>
-                    <option className="forms__option" value="all">Wszystkie</option>
-                    <option className="forms__option" value="all">Wszystkie</option>
-                    <option className="forms__option" value="all">Wszystkie</option>
-                </select>
-            </div>
+  const capacityOptions = [
+    { value: '0', label: 'Wszystkie' },
+    { value: '7', label: '7kg' },
+    { value: '8', label: '8kg' },
+    { value: '9', label: '9kg' },
+    { value: '10', label: '10kg' },
+    { value: '11', label: '11kg' },
+    { value: '12', label: '12kg' },
+    { value: '13', label: '13kg' }
+  ];
 
-            <div className="forms__container">
-                <p className="forms__label">
-                    Klasa energetyczna:
-                </p>
-                <select name="cars" className="forms__select" value={searchConfig.energyClass} onChange={(value)=>changeSearchConfig(value, "energyClass")}>
-                    <option className="forms__option" value="all">Wszystkie</option>
-                    <option className="forms__option" value="A">A</option>
-                    <option className="forms__option" value="B">B</option>
-                    <option className="forms__option" value="C">C</option>
-                    <option className="forms__option" value="D">D</option>
-                    <option className="forms__option" value="E">E</option>
-                    <option className="forms__option" value="F">F</option>
-                </select>
-            </div>
+  function changeSearchConfig(value, searchType) {
+    let _searchConfig = {...searchConfig};
+    _searchConfig[searchType] = value;
+    setSearchConfig(_searchConfig);
+  }
+  console.log(searchConfig);
+  return (
+    <section className="forms">
+      <div className="forms__container">
+        <p className="forms__label">Sortuj po:</p>
+        <Select
+          name="sortBy"
+          className="forms__select"
+          value={sortOptions.find(option => option.value === searchConfig.formSortBy)}
+          options={sortOptions}
+          onChange={(selectedOption) => changeSearchConfig(selectedOption.value, 'formSortBy')}
+        />
+      </div>
 
-            <div className="forms__container">
-                <p className="forms__label">
-                    Pojemność:
-                </p>
-                <select name="capacity" className="forms__select" value={searchConfig.capacity} onChange={(value)=>changeSearchConfig(value, "capacity")}>
-                    <option className="forms__option" value="0">Wszystkie</option>
-                    <option className="forms__option" value="7">7kg</option>
-                    <option className="forms__option" value="8">8kg</option>
-                    <option className="forms__option" value="9">9kg</option>
-                    <option className="forms__option" value="10">10kg</option>
-                    <option className="forms__option" value="11">11kg</option>
-                    <option className="forms__option" value="12">12kg</option>
-                    <option className="forms__option" value="13">13kg</option>
-                </select>
-            </div>
-        </section>
-    )
+      <div className="forms__container">
+        <p className="forms__label">Funkcje:</p>
+        <Select
+          name="functions"
+          className="forms__select"
+          value={functionsOptions.find(option => option.value === searchConfig.functions)}
+          options={functionsOptions}
+          onChange={(selectedOption) => changeSearchConfig(selectedOption.value, 'functions')}
+        />
+      </div>
+
+      <div className="forms__container">
+        <p className="forms__label">Klasa energetyczna:</p>
+        <Select
+          name="cars"
+          className="forms__select"
+          value={energyClassOptions.find(option => option.value === searchConfig.energyClass)}
+          options={energyClassOptions}
+          onChange={(selectedOption) => changeSearchConfig(selectedOption.value, 'energyClass')}
+        />
+      </div>
+
+      <div className="forms__container">
+        <p className="forms__label">Pojemność:</p>
+        <Select
+          name="capacity"
+          className="forms__select"
+          value={capacityOptions.find(option => option.value === searchConfig.capacity)}
+          options={capacityOptions}
+          onChange={(selectedOption) => changeSearchConfig(selectedOption.value, 'capacity')}
+        />
+      </div>
+    </section>
+  );
 }
 
 export default Forms;
