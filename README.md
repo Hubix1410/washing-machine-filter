@@ -1,10 +1,6 @@
 # Samsung washing machine fillter
 
-App is filltering and sorting washing mashines according in 4 different ways:
-    - Sorting by (price, capacity, popularity)
-    - Energy class
-    - Capaticy
-    - Functions
+App is filltering and sorting washing mashines according in 4 different ways: Sorting by (price, capacity, popularity), Energy class, Capaticy, Functions
 
 ## Technologies:
     - React
